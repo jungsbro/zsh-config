@@ -159,13 +159,13 @@ setopt nonomatch
 alias mc='LANG=en_EN.UTF-8 mc'
 # alias mc='LANG=ko_KR.UTF-8 mc'
 
-######### vimx #########   
-alias vi='vimx'
-alias vim='vimx'
+######### vimx for centos7 #########   
+# alias vi='vimx'
+# alias vim='vimx'
 
-######### ranger #########   
-export VISUAL='/usr/bin/vimx'
-export EDITOR='/usr/bin/vimx'
+######### vimx for ranger #########   
+# export VISUAL='/usr/bin/vimx'
+# export EDITOR='/usr/bin/vimx'
 
 ######### fd #########   
 alias fd=fdfind
