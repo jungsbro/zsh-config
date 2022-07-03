@@ -85,7 +85,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -108,7 +108,22 @@ source $ZSH/oh-my-zsh.sh
 
 
 
-################## From bashrc ##################
+# From bashrc==================================================================
+#
+# proxy settings ===============================================================
+# export PROXY_SERVER_IP=192.168.0.0:3128
+# export http_proxy=http://${PROXY_SERVER_IP}
+# export https_proxy=${http_proxy}
+# export ftp_proxy=${http_proxy}
+# export no_proxy=localhost
+# =============================================================================
+
+export PATH=$PATH:$HOME:/opt/genymobile/genymotion
+
+# if [ -f ~/.bash_profile ]; then
+#     source ~/.bash_profile
+# fi
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -134,12 +149,17 @@ alias l='ls -CF'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 
-######### Custom settings #########   
+# Custom settings =============================================================
 setopt correct
 setopt nonomatch
+# =============================================================================
 
+# History =====================================================================
+export HISTCONTROL=ignoreboth
+export HISTTIMEFORMAT="%Y.%m.%d %T "
+# =============================================================================
 
-######### tmux autostart #########   
+# tmux autostart ==============================================================
 # if [ -z "$TMUX" ] && [ -n "$SSH_TTY" ] && [[ $- =~ i ]]; then
 #     tmux attach-session -t ssh || tmux new-session -s ssh
 #     exit
@@ -152,26 +172,30 @@ setopt nonomatch
 #         exec tmux
 #     fi
 # fi
+# =============================================================================
 
 
-######### mc #########   
+# mc===========================================================================
 # alias mc='EDITOR=/usr/bin/vim mc'
 alias mc='LANG=en_EN.UTF-8 mc'
 # alias mc='LANG=ko_KR.UTF-8 mc'
+# =============================================================================
 
-######### vimx for centos7 #########   
+# vim for centos7 =============================================================
 # alias vi='vimx'
 # alias vim='vimx'
+# =============================================================================
 
-######### vimx for ranger #########   
+# vimx for ranger =============================================================
 # export VISUAL='/usr/bin/vimx'
 # export EDITOR='/usr/bin/vimx'
+# =============================================================================
 
-######### fd #########   
+# fd ==========================================================================
 alias fd=fdfind
+# =============================================================================
 
-
-######### fasd #########   
+# fasd ========================================================================
 alias a='fasd -a'        # any
 alias s='fasd -si'       # show / search / select
 alias d='fasd -d'        # directory
@@ -184,9 +208,9 @@ alias zz='fasd_cd -d -i' # cd with interactive selection
 alias v='f -e vim' # quick opening files with vim
 # alias m='f -e mplayer' # quick opening files with mplayer
 # alias o='a -e xdg-open' # quick opening files with xdg-open
+# =============================================================================
 
-
-######### fzf #########   
+# fzf =========================================================================
 # export FZF_DEFAULT_COMMAND='fd -type f'
 export FZF_DEFAULT_COMMAND="find -L"
 
@@ -218,3 +242,22 @@ function fcd() {
                   -o -type d -print 2> /dev/null | fzf +m) &&
   cd "$dir"
 }
+# =============================================================================
+
+# wacom========================================================================
+# intuosPro_PTH860 12x8 ( 0 0 62200 43200 )
+
+# stylusId=$( xsetwacom --list devices | grep -i stylus | cut -f 10 -d ' ' | cut -f 1 )
+# eraserId=$( xsetwacom --list devices | grep -i eraser | cut -f 10 -d ' ' | cut -f 1 )
+#
+# /usr/bin/xsetwacom set ${stylusId} ResetArea;
+# /usr/bin/xsetwacom set ${eraserId} ResetArea;
+# /usr/bin/xsetwacom set ${stylusId} Area 38210 29700 62200 43200;
+# /usr/bin/xsetwacom set ${eraserId} Area 38210 29700 62200 43200;
+# =============================================================================
+
+# =============================================================================
+# export GTK_IM_MODULE=ibus
+# export XMODIFIERS=@im=ibus
+# export QT_IM_MODULE=ibus
+# =============================================================================
