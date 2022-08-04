@@ -178,19 +178,27 @@ export HISTTIMEFORMAT="%Y.%m.%d %T "
 # ==============================================================================
 
 # mc ===========================================================================
-# alias mc='EDITOR=/usr/bin/vim mc'
+# alias mc='EDITOR=/usr/bin/vim mc'     # debian
+# alias mc='EDITOR=/usr/bin/vimx mc'    # CentOS
+
 alias mc='LANG=en_EN.UTF-8 mc'
 # alias mc='LANG=ko_KR.UTF-8 mc'
 # ==============================================================================
 
-# vim for centos7 ==============================================================
-# alias vi='vimx'
-# alias vim='vimx'
+# vim ==========================================================================
+# alias vi='/usr/bin/vim'               # debian
+# alias vim='/usr/bin/vim'              # debian
+
+# alias vi='/usr/bin/vimx'              # CentOS
+# alias vim='/usr/bin/vimx'             # CentOS
 # ==============================================================================
 
-# vimx for ranger ==============================================================
-# export VISUAL='/usr/bin/vimx'
-# export EDITOR='/usr/bin/vimx'
+# vim for ranger ==============================================================
+# export VISUAL='/usr/bin/vim'          # debian
+# export EDITOR='/usr/bin/vim'          # debian
+
+# export VISUAL='/usr/bin/vimx'         # CentOS
+# export EDITOR='/usr/bin/vimx'         # CentOS
 # ==============================================================================
 
 # fd ===========================================================================
