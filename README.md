@@ -40,28 +40,19 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 4. Clone zsh-config
 ```bash
-mkdir ~/github/
+git clone https://github.com/jungsbro/zsh-config.git ~/github/zsh-config;
+cp -Rfv ~/github/zsh-config/.oh-my-zsh/custom ~/.oh-my-zsh/;
+cp -Rfv ~/github/zsh-config/.zshrc ~;
 ```
 
 ```bash
-git clone https://github.com/jungsbro/zsh-config.git ~/github/zsh-config
-```
-
-```bash
-cp -Rfv ~/github/zsh-config/.oh-my-zsh/custom ~/.oh-my-zsh/
-```
-
-```bash
-cp -Rfv ~/github/zsh-config/.zshrc ~
+vi ~/.zshrc         # export ZSH="/home/{userID}/.oh-my-zsh"
 ```
 <br>
 
 5. Install plugins for oh-my-zsh
 ```bash
-cd ~/.oh-my-zsh/custom/plugins/
-```
-
-```bash
+cd ~/.oh-my-zsh/custom/plugins/;
 git clone https://github.com/chrissicool/zsh-256color.git;
 git clone https://github.com/zsh-users/zsh-autosuggestions.git;
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git;
@@ -71,11 +62,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git;
 6. Install truetype-font
 ```bash
 sudo cp -r ~/github/zsh-config/D2Coding-Ver1.3.2-20180524/D2Coding* /usr/share/fonts/truetype;
-```
-
-```bash
 fc-cache -rv;
 ```
-
+```bash
+reboot
+```
 ---
 <br><br>
