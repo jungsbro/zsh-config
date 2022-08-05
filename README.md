@@ -25,6 +25,7 @@ README.md                       #
 # **Installation**
 1. Install zsh
 ```bash
+sudo apt update;
 sudo apt install -y zsh curl git autojump fzf fd-find fasd fonts-powerline;
 ```
 <br>
@@ -55,10 +56,11 @@ vi ~/.zshrc         # export ZSH="/home/{userID}/.oh-my-zsh"
 
 5. Install plugins for oh-my-zsh
 ```bash
-cd ~/.oh-my-zsh/custom/plugins/;
+pushd ~/.oh-my-zsh/custom/plugins/;
 git clone https://github.com/chrissicool/zsh-256color.git;
 git clone https://github.com/zsh-users/zsh-autosuggestions.git;
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git;
+popd;
 ```
 <br>
 
