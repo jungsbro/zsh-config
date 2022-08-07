@@ -56,7 +56,7 @@ vi ~/.zshrc         # export ZSH="/home/{userID}/.oh-my-zsh"
 
 5. Install plugins for oh-my-zsh
 ```bash
-pushd ~/.oh-my-zsh/custom/plugins/;
+pushd ~/.oh-my-zsh/custom/plugins;
 git clone https://github.com/chrissicool/zsh-256color.git;
 git clone https://github.com/zsh-users/zsh-autosuggestions.git;
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git;
