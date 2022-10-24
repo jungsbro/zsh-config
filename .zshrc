@@ -207,6 +207,17 @@ alias mc='LANG=en_EN.UTF-8 mc'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 # ==============================================================================
 
+# nnn ==========================================================================
+# export NNN_OPTS="H"
+# export NNN_OPTS="eaEoxH"
+# export NNN_OPTS="cEnrx"
+# export LC_COLLATE='C'
+export NNN_COLORS='1267'
+export NNN_BMS="r:/;d:/dev;e:/etc;m:/media;M:/mnt;o:/opt;s:/srv;p:/tmp;u:/usr;v:/var;h:~;1:/volume1;2:/volume2;3:/volume3;4:/volume4;"
+export NNN_USE_EDITOR=1
+export NNN_PLUG='a:autojump;f:finder;o:fzopen;p:mocq;d:diffs;t:nmount;v:imgview'
+# ==============================================================================
+
 # fd ===========================================================================
 alias fd=fdfind
 # ==============================================================================
