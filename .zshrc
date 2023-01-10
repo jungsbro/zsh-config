@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/pi/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -170,13 +170,13 @@ export HISTTIMEFORMAT="%Y.%m.%d %T "
 #     exit
 # fi
 
-# if [[ -z "$TMUX" ]]; then
-#     if tmux has-session 2>/dev/null; then
-#         exec tmux attach
-#     else
-#         exec tmux
-#     fi
-# fi
+if [[ -z "$TMUX" ]]; then
+    if tmux has-session 2>/dev/null; then
+        exec tmux attach
+    else
+        exec tmux
+    fi
+fi
 # ==============================================================================
 
 # mc ===========================================================================
