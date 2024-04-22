@@ -1,6 +1,6 @@
 # **zsh-config**
 
-`<br><br>`
+<br>
 
 # **FolderTree**
 
@@ -23,7 +23,7 @@ README.md                       #
 
 ---
 
-`<br><br>`
+<br>
 
 # **Installation**
 
@@ -93,4 +93,4 @@ reboot
 
 ---
 
-`<br><br>`
+<br>
