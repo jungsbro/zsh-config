@@ -42,6 +42,9 @@ sudo apt install -y fonts-powerline autojump fzf fd-find fasd;
 
 ```bash
 chsh -s /usr/bin/zsh;
+
+# user(steve) 지정
+chsh -s /usr/bin/zsh steve;
 ```
 
 <br>
@@ -50,6 +53,9 @@ chsh -s /usr/bin/zsh;
 
 ```bash
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
+
+# 무인설치
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh) --unattended";
 ```
 
 <br>
