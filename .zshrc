@@ -71,12 +71,12 @@ ZSH_THEME="bullet-train"
 plugins=(
     git
     zsh-autosuggestions
-    # autojump
+    autojump
     zsh-syntax-highlighting
     zsh-256color
     fzf
     fasd
-    )
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -120,7 +120,15 @@ export LC_ALL="en_US.UTF-8"
 # export no_proxy=localhost
 # ==============================================================================
 
-export PATH=$PATH:$HOME:/opt/genymobile/genymotion
+# ==============================================================================
+# export PATH=$PATH:$HOME:/opt/genymobile/genymotion
+if [[ *"$PATH"* != *"$HOME:"* ]]; then
+    export PATH=$PATH:$HOME
+fi
+if [[ *"$PATH"* != *"$HOME/.local/bin"* ]]; then
+    export PATH=$PATH:$HOME/.local/bin
+fi
+# ==============================================================================
 
 # if [ -f ~/.bash_profile ]; then
 #     source ~/.bash_profile
@@ -296,4 +304,9 @@ alias getThrot="vcgencmd get_throttled"
 # export GTK_IM_MODULE=ibus
 # export XMODIFIERS=@im=ibus
 # export QT_IM_MODULE=ibus
+# ==============================================================================
+
+# ==============================================================================
+/usr/bin/clear
+/usr/bin/neofetch
 # ==============================================================================
