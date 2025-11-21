@@ -107,7 +107,7 @@ export LC_ALL="en_US.UTF-8"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
+# ==============================================================================
 
 
 # From bashrc ==================================================================
@@ -130,9 +130,11 @@ if [[ *"$PATH"* != *"$HOME/.local/bin"* ]]; then
 fi
 # ==============================================================================
 
+# ==============================================================================
 # if [ -f ~/.bash_profile ]; then
 #     source ~/.bash_profile
 # fi
+# ==============================================================================
 
 # enable color support of ls and also add handy aliases ========================
 if [ -x /usr/bin/dircolors ]; then
@@ -309,6 +311,11 @@ alias getThrot="vcgencmd get_throttled"
 # ==============================================================================
 # /usr/bin/clear
 # /usr/bin/neofetch
+# ==============================================================================
+
+# for build ====================================================================
+export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64:$LD_LIBRARY_PATH
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/local/lib64/pkgconfig:/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
 # ==============================================================================
 
 # nala =========================================================================
