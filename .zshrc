@@ -180,7 +180,7 @@ export HISTTIMEFORMAT="%Y.%m.%d %T "
 #     exit
 # fi
 
-if [[ -z "$TMUX" ]]; then
+if [[ -t 1 ]] && [[ -z "$TMUX" ]]; then
     if tmux has-session 2>/dev/null; then
         exec tmux attach
     else
