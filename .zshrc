@@ -107,228 +107,83 @@ export LC_ALL="en_US.UTF-8"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+# ==============================================================================
+# ------------------------------------------------------------------------------
+# grep / ll / la / ls
+source ~/.config/zshrc/alias.sh
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# source ~/.config/zshrc/etc.sh
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# fd / fzfv / frmrf / fcd
+# source ~/.config/zshrc/find.sh
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+source ~/.config/zshrc/fmgr.sh
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# source ~/.config/zshrc/history.sh
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# source ~/.config/zshrc/ime.sh
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# neofetch / fastfetch
+# source ~/.config/zshrc/info.sh
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# source ~/.config/zshrc/lib.sh
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# source ~/.config/zshrc/nala.sh
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# ~/.nix-profile/etc/profile.d/nix.sh
+# source ~/.config/zshrc/nix.sh
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# VK_ICD_FILENAMES / OCL_ICD_VENDORS / LD_LIBRARY_PATH
+# source ~/.config/zshrc/nvidia-current.sh
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# ~/.local/bin
+# source ~/.config/zshrc/path.sh
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# source ~/.config/zshrc/proxy.sh
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+source ~/.config/zshrc/tmux.sh
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+source ~/.config/zshrc/vim.sh
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# source ~/.config/zshrc/wacom.sh && set_wacom_range;
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# source ~/.config/zshrc/yt-dlp.sh
+# ------------------------------------------------------------------------------
 # ==============================================================================
 
 
-# From bashrc ==================================================================
-#
-# proxy settings ===============================================================
-# export PROXY_SERVER_IP=192.168.0.0:3128
-# export http_proxy=http://${PROXY_SERVER_IP}
-# export https_proxy=${http_proxy}
-# export ftp_proxy=${http_proxy}
-# export no_proxy=localhost
-# ==============================================================================
 
-# ==============================================================================
-# export PATH=$PATH:$HOME:/opt/genymobile/genymotion
-if [[ *"$PATH"* != *"$HOME:"* ]]; then
-    export PATH=$PATH:$HOME
-fi
-if [[ *"$PATH"* != *"$HOME/.local/bin"* ]]; then
-    export PATH=$PATH:$HOME/.local/bin
-fi
-# ==============================================================================
-
-# ==============================================================================
-# if [ -f ~/.bash_profile ]; then
-#     source ~/.bash_profile
-# fi
-# ==============================================================================
-
-# enable color support of ls and also add handy aliases ========================
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    # alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-# ==============================================================================
-
-# colored GCC warnings and errors ==============================================
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-# ==============================================================================
-
-# some more ls aliases =========================================================
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-# ==============================================================================
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-# ==============================================================================
-
-# Custom settings ==============================================================
-setopt correct
-setopt nonomatch
-# ==============================================================================
-
-# History ======================================================================
-export HISTCONTROL=ignoreboth
-export HISTTIMEFORMAT="%Y.%m.%d %T "
-# ==============================================================================
-
-# tmux autostart ===============================================================
-# if [ -z "$TMUX" ] && [ -n "$SSH_TTY" ] && [[ $- =~ i ]]; then
-#     tmux attach-session -t ssh || tmux new-session -s ssh
-#     exit
-# fi
-
-if [[ -t 1 ]] && [[ -z "$TMUX" ]]; then
-    if tmux has-session 2>/dev/null; then
-        exec tmux attach
-    else
-        exec tmux
-    fi
-fi
-# ==============================================================================
-
-# mc ===========================================================================
-# alias mc='EDITOR=/usr/bin/vim mc'     # debian
-# alias mc='EDITOR=/usr/bin/vimx mc'    # CentOS
-
-alias mc='LANG=en_EN.UTF-8 mc'
-# alias mc='LANG=ko_KR.UTF-8 mc'
-# ==============================================================================
-
-# vim ==========================================================================
-# alias vi='/usr/bin/vim'               # debian
-# alias vim='/usr/bin/vim'              # debian
-
-# alias vi='/usr/bin/vimx'              # CentOS
-# alias vim='/usr/bin/vimx'             # CentOS
-# ==============================================================================
-
-# vim for ranger ==============================================================
-# export VISUAL='/usr/bin/vim'          # debian
-# export EDITOR='/usr/bin/vim'          # debian
-
-# export VISUAL='/usr/bin/vimx'         # CentOS
-# export EDITOR='/usr/bin/vimx'         # CentOS
-# ==============================================================================
-
-# ranger =======================================================================
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-# ==============================================================================
-
-# nnn ==========================================================================
-# export NNN_OPTS="H"
-# export NNN_OPTS="eaEoxH"
-# export NNN_OPTS="cEnrx"
-# export LC_COLLATE='C'
-export NNN_COLORS='1267'
-export NNN_BMS="r:/;d:/dev;e:/etc;m:/media;M:/mnt;o:/opt;s:/srv;p:/tmp;u:/usr;v:/var;h:~;1:/volume1;2:/volume2;3:/volume3;4:/volume4;"
-export NNN_USE_EDITOR=1
-export NNN_PLUG='a:autojump;f:finder;o:fzopen;p:mocq;d:diffs;t:nmount;v:imgview'
-# ==============================================================================
-
-# fd ===========================================================================
-alias fd=fdfind
-# ==============================================================================
-
-# fasd =========================================================================
-alias a='fasd -a'        # any
-alias s='fasd -si'       # show / search / select
-alias d='fasd -d'        # directory
-alias f='fasd -f'        # file
-alias sd='fasd -sid'     # interactive directory selection
-alias sf='fasd -sif'     # interactive file selection
-alias z='fasd_cd -d'     # cd, same functionality as j in autojump
-alias zz='fasd_cd -d -i' # cd with interactive selection
-
-alias v='f -e vim' # quick opening files with vim
-# alias m='f -e mplayer' # quick opening files with mplayer
-# alias o='a -e xdg-open' # quick opening files with xdg-open
-# ==============================================================================
-
-# fzf ==========================================================================
-# export FZF_DEFAULT_COMMAND='fd -type f'
-export FZF_DEFAULT_COMMAND="find -L"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-function fzfv()
-{
-    fzf --preview '[[ $(file --mime {}) =~ binary ]] &&
-                 echo {} is a binary file ||
-                 (highlight -O ansi -l {} ||
-                  coderay {} ||
-                  rougify {} ||
-                  cat {}) 2> /dev/null | head -500'
-}
-
-function frmrf()
-{
-    rm -rf $(find $argv | fzf)
-}
-
-# function fcd()
-# {
-#     cd $(find $argv -type d | fzf)
-# }
-
-function fcd() {
-  local dir
-  dir=$(find ${1:-.} -path '*/\.*' -prune \
-                  -o -type d -print 2> /dev/null | fzf +m) &&
-  cd "$dir"
-}
-# ==============================================================================
-
-# Current State ================================================================
-#alias getClock="cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq"
-alias getClock="vcgencmd measure_clock arm"
-#alias getTemp="cat /sys/class/thermal/thermal_zone0/temp"
-alias getTemp="vcgencmd measure_temp"
-alias getVolt="vcgencmd measure_volts"
-alias getThrot="vcgencmd get_throttled"
-# ==============================================================================
-
-# wacom ========================================================================
-# intuosPro_PTH860 12x8 ( 0 0 62200 43200 )
-
-# stylusId=$( xsetwacom --list devices | grep -i stylus | cut -f 10 -d ' ' | cut -f 1 )
-# eraserId=$( xsetwacom --list devices | grep -i eraser | cut -f 10 -d ' ' | cut -f 1 )
-#
-# /usr/bin/xsetwacom set ${stylusId} ResetArea;
-# /usr/bin/xsetwacom set ${eraserId} ResetArea;
-# /usr/bin/xsetwacom set ${stylusId} Area 38210 29700 62200 43200;
-# /usr/bin/xsetwacom set ${eraserId} Area 38210 29700 62200 43200;
-# ==============================================================================
-
-# ==============================================================================
-# export GTK_IM_MODULE=ibus
-# export XMODIFIERS=@im=ibus
-# export QT_IM_MODULE=ibus
-# ==============================================================================
-
-# ==============================================================================
-# /usr/bin/clear
-# /usr/bin/neofetch
-# ==============================================================================
-
-# for build ====================================================================
-export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64:$LD_LIBRARY_PATH
-export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/local/lib64/pkgconfig:/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
-# ==============================================================================
-
-# nala =========================================================================
-# apt() {
-#     command nala "$@"
-# }
-
-# sudo() {
-#     if [ "$1" = "apt" ]; then
-#         shift
-#         command sudo nala "$@"
-#     else
-#         command sudo "$@"
-#     fi
-# }
-# ==============================================================================
